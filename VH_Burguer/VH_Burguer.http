@@ -1,0 +1,6 @@
+@VH_Burguer_HostAddress = http://localhost:5149
+
+GET {{VH_Burguer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
