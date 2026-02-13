@@ -4446,11 +4446,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47014999869\\Desktop\\VH_Burguer\\VH_Burguer\\VH_Burguer.csproj",
+      "projectUniqueName": "C:\\Users\\47014999869\\Desktop\\Projeto_VH_Burguer\\VH_Burguer\\VH_Burguer.csproj",
       "projectName": "VH_Burguer",
-      "projectPath": "C:\\Users\\47014999869\\Desktop\\VH_Burguer\\VH_Burguer\\VH_Burguer.csproj",
+      "projectPath": "C:\\Users\\47014999869\\Desktop\\Projeto_VH_Burguer\\VH_Burguer\\VH_Burguer.csproj",
       "packagesPath": "C:\\Users\\47014999869\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47014999869\\Desktop\\VH_Burguer\\VH_Burguer\\obj\\",
+      "outputPath": "C:\\Users\\47014999869\\Desktop\\Projeto_VH_Burguer\\VH_Burguer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4532,7 +4532,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.417/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.418/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
