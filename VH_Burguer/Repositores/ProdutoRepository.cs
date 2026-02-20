@@ -59,7 +59,7 @@ namespace VH_Burguer.Repositores
             return produto; // Retorna a imagem relacionada aquele produto por Id
         } 
 
-        public void Adicionar(Produto produto, List<int> categoriaIds) // Para cada produto adionado é necessário passar uma categoria também
+        public void Adicionar(Produto produto, List<int> categoriaIds) // Para cada produto adicionado é necessário passar uma categoria também
         {
             List<Categoria> categorias = _context.Categoria
                 .Where(categoria => categoriaIds.Contains(categoria.CategoriaID))

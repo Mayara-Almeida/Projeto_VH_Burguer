@@ -287,3 +287,4 @@ C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VH_Burguer\obj\Debug\net8.0\refi
 C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VH_Burguer\obj\Debug\net8.0\VH_Burguer.pdb
 C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VH_Burguer\obj\Debug\net8.0\VH_Burguer.genruntimeconfig.cache
 C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VH_Burguer\obj\Debug\net8.0\ref\VH_Burguer.dll
+C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VH_Burguer\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

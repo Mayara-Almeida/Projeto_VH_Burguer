@@ -17,7 +17,7 @@ namespace VH_Burguer.Controllers
             _service = service;
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public ActionResult<TokenDto> Login(LoginDto loginDto)
         {
             try
