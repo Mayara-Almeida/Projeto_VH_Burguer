@@ -9,5 +9,6 @@ public partial class Categoria
 
     public string Nome { get; set; } = null!;
 
+    // Relação entre categoria e produto
     public virtual ICollection<Produto> Produto { get; set; } = new List<Produto>();
 }
