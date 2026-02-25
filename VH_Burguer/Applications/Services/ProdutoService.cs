@@ -53,7 +53,7 @@ namespace VH_Burguer.Applications.Services
 
             if(produtoDto.Preco < 0)
             {
-                throw new DomainException("Preço deve ser maior ue zero.");
+                throw new DomainException("Preço deve ser maior que zero.");
             }
 
             if (string.IsNullOrWhiteSpace(produtoDto.Descricao))

@@ -7,7 +7,7 @@ namespace VH_Burguer.Applications.Regras
         public static void ValidarHorario()
         {
             var agora = DateTime.Now.TimeOfDay; // Pegando o horário atual
-            var abertura = new TimeSpan(10, 0, 0); // Criando horário de abertura da loja para restrição - hora, minuto, segundo (vai abrir 16h) 
+            var abertura = new TimeSpan(16, 0, 0); // Criando horário de abertura da loja para restrição - hora, minuto, segundo (vai abrir 16h) 
             var fechamento = new TimeSpan(23, 0, 0); // Criando horário de fechamento
 
             // Verificar se o estabelecimento está aberto

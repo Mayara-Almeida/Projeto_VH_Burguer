@@ -7,7 +7,7 @@ namespace VH_Burguer.Interfaces
         List<Promocao> Listar();
         Promocao ObterPorId(int id);
 
-        bool NomeExiste(string nome, int? promocaoAtual = null);
+        bool NomeExiste(string nome, int? promocaoIdAtual = null);
         void Adicionar(Promocao promocao);
         void Atualizar(Promocao promocao);
         void Remover(int id);

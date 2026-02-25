@@ -1,0 +1,30 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using VH_Burguer.Applications.Services;
+
+namespace VH_Burguer.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LogProdutoController : ControllerBase
+    {
+        private readonly LogAlteracaoProdutoService _service;
+
+        public LogProdutoController(LogAlteracaoProdutoService service)
+        {
+            _service = service;
+        }
+
+        [HttpGet]
+        public ActionResult Listar()
+        {
+            return Ok(_service.Listar());
+        }
+
+        [HttpGet("produto/{id}")]
+        public ActionResult ListarProduto(int id)
+        {
+            return Ok(_service.ListarPorProduto(id));
+        }
+    }
+}
