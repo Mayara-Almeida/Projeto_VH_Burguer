@@ -87,6 +87,7 @@ namespace VH_Burguer.Applications.Services
         // Retorar o método adicomar como leitura
         public LerProdutoDto Adicionar(CriarProdutoDto produtoDto, int usuarioId)
         {
+            ValidarAutenticacao.ValidarAutenticacaoLogin(); // Arrumar Erro nessa linha
             ValidarCadastro(produtoDto); // Antes de adicionar o validar cadastro tem que ser chamado
 
             if(_repository.NomeExiste(produtoDto.Nome))
@@ -117,7 +118,7 @@ namespace VH_Burguer.Applications.Services
 
             if(produtoBanco == null)
             {
-                throw new DomainException("Produto não enconrado.");
+                throw new DomainException("Produto não encontrado.");
             }
 
             // produtoIdAtual: -> dois pontos serve para passar o valor do parâmetro
@@ -133,7 +134,7 @@ namespace VH_Burguer.Applications.Services
 
             if(produtoDto.Preco < 0)
             {
-                throw new DomainException("Preço deve ser maior ue zero.");
+                throw new DomainException("Preço deve ser maior que zero.");
             }
 
             produtoBanco.Nome = produtoDto.Nome;

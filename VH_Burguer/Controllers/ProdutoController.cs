@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using VH_Burguer.Applications.Services;
 using VH_Burguer.DTOs.Produtodto;
+using VH_Burguer.DTOs.UsuarioDto;
 using VH_Burguer.Exceptions;
 
 namespace VH_Burguer.Controllers
@@ -49,15 +50,15 @@ namespace VH_Burguer.Controllers
         [HttpGet("{id}")]
         public ActionResult<LerProdutoDto> ObterPorId(int id)
         {
-            LerProdutoDto produto = _service.ObterPorId(id);
-
-            if (produto == null)
+            try
             {
-                // return StatusCode(404);
-                return NotFound();
+                LerProdutoDto produto = _service.ObterPorId(id);
+                return Ok(produto);
             }
-
-            return Ok(produto);
+            catch (DomainException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         // GET -> caminho da imagem: api/produto/5/imagem (o número é o id da imagem)

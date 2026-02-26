@@ -53,6 +53,14 @@ namespace VH_Burguer.Applications.Services
             }
         }
 
+        private static void ValidarNome(string nome)
+        {
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                throw new DomainException("Nome é obrigatório.");
+            }
+        }
+
         private static byte[] HashSenha(string senha)
         {
             if (string.IsNullOrWhiteSpace(senha)) // Garante que a senha não esteja vazia
@@ -91,10 +99,11 @@ namespace VH_Burguer.Applications.Services
         public LerUsuarioDTO Adicionar(CriarUsuarioDTO usuarioDto)
         {
             ValidarEmail(usuarioDto.Email);
+            ValidarNome(usuarioDto.Nome);
 
             if (_repository.EmailExiste(usuarioDto.Email))
             {
-                throw new DomainException("Já existe um uuário com esse e-mail");
+                throw new DomainException("Já existe um usuário com esse e-mail");
             }
 
             Usuario usuario = new Usuario // Criando entidade usuario
@@ -124,7 +133,7 @@ namespace VH_Burguer.Applications.Services
 
             if (usuarioComMesmoEmail != null && usuarioComMesmoEmail.UsuarioID != id) // Verificando se já existe um usuário com aquele email
             {
-                throw new DomainException("Já existe um usuário com esre e-mail.");
+                throw new DomainException("Já existe um usuário com esse e-mail.");
             }
 
             // As informações que estão no banco(usuarioBanco) vão receber as novas alterações passadas, vindas de usuarioDto

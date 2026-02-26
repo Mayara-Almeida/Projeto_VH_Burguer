@@ -44,6 +44,11 @@ namespace VH_Burguer.Applications.Services
                 throw new DomainException("E-mail ou senha inválidos.");
             }
 
+            if(usuario.StatusUsuario == false)
+            {
+                throw new DomainException("Usuário está inativado.");
+            }
+
             // Gerando o token (caso esteja tudo certo)
             var token = _tokenJwt.GerarToken(usuario);
 

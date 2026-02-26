@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using VH_Burguer.Applications.Services;
+using VH_Burguer.DTOs.PromocaoDto;
 using VH_Burguer.DTOs.UsuarioDto;
 using VH_Burguer.Exceptions;
 
@@ -31,26 +32,29 @@ namespace VH_Burguer.Controllers
         [HttpGet("{id}")] // recebe um parâmetro chamado id
         public ActionResult<LerUsuarioDTO> ObterPorId(int id)
         {
-            LerUsuarioDTO usuario = _service.ObterPorId(id);
-            if (usuario == null)
+            try
             {
-                return NotFound(); // StatusCode - Não encontrado - 404
+                LerUsuarioDTO usuario = _service.ObterPorId(id);
+                return Ok(usuario);
             }
-
-            return Ok(usuario); // Caso ele ache por id
+            catch (DomainException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpGet("email/{email}")] // Recebe um caminho, o segundo email retona o email da pessoa no caminho - não é correto fazer isso
         public ActionResult<LerUsuarioDTO> ObterPorEmail(string email)
         {
-            LerUsuarioDTO usuario = _service.ObterPorEmail(email);
-
-            if (usuario == null)
+            try
             {
-                return NotFound();
+                LerUsuarioDTO usuario = _service.ObterPorEmail(email);
+                return Ok(usuario);
             }
-
-            return Ok(usuario);
+            catch (DomainException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         // POST - envia dados
