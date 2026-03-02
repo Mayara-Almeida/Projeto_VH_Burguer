@@ -29,7 +29,7 @@ namespace VH_Burguer.Applications.Services
                 UsuarioID = usuario.UsuarioID,
                 Nome = usuario.Nome,
                 Email = usuario.Email,
-                StatusUsuario = usuario.StatusUsuario ?? true // Se não tiver status no banco, deia como true
+                StatusUsuario = usuario.StatusUsuario ?? true // Se não tiver status no banco, deixa como true
             };
 
             return lerUsuario;
