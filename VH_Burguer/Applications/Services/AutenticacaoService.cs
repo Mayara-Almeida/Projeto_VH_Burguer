@@ -1,4 +1,5 @@
-﻿using VH_Burguer.Applications.Autenticacao;
+﻿
+using VH_Burguer.Applications.Autenticacao;
 using VH_Burguer.Domains;
 using VH_Burguer.DTOs.AutenticacaoDto;
 using VH_Burguer.Exceptions;

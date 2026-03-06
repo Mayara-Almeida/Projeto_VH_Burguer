@@ -12,7 +12,7 @@
 
         public bool? StatusProduto { get; set; }
 
-        // Categoias
+        // Categorias
         public List<int> CategoriasIds { get; set; } = new();
         public List<string> Categorias { get; set; } = new();
 

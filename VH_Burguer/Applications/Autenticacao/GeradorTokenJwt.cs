@@ -50,7 +50,7 @@ namespace VH_Burguer.Applications.Autenticacao
            // define o algoritmo de assinatura do token
            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            // Claims -> informações dp usuário que vão dentro do token
+            // Claims -> informações do usuário que vão dentro do token
             // essas informações podem ser recuperadas na API para identificar quem está logado
             var claims = new List<Claim>
            {

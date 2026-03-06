@@ -87,7 +87,7 @@ namespace VH_Burguer.Applications.Services
         // Retorar o método adicomar como leitura
         public LerProdutoDto Adicionar(CriarProdutoDto produtoDto, int usuarioId)
         {
-            ValidarAutenticacao.ValidarAutenticacaoLogin(usuarioId); // Arrumar Erro nessa linha
+            ValidarAutenticacao.ValidarAutenticacaoLogin(usuarioId); 
             ValidarCadastro(produtoDto); // Antes de adicionar o validar cadastro tem que ser chamado
 
             if(_repository.NomeExiste(produtoDto.Nome))
@@ -120,7 +120,7 @@ namespace VH_Burguer.Applications.Services
             {
                 throw new DomainException("Produto não encontrado.");
             }
-
+                
             // produtoIdAtual: -> dois pontos serve para passar o valor do parâmetro
             if (_repository.NomeExiste(produtoDto.Nome, produtoIdAtual: id))
             {
