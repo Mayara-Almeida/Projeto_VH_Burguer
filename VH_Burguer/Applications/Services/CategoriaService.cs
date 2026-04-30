@@ -59,7 +59,7 @@ namespace VH_Burguer.Applications.Services
             ValidarNome(criarDto.Nome);
 
             if (_repository.NomeExiste(criarDto.Nome))
-            {
+            {   
                 throw new DomainException("Categoria já existe.");
             }
 
