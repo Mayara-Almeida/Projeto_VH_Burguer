@@ -19,6 +19,8 @@ namespace VH_Burguer.Applications.Conversoes
 
                 Categorias = produto.Categoria.Select(categoria => categoria.Nome).ToList(),
 
+                ImagemUrl = $"produto/{produto.ProdutoID}/imagem",
+
                 UsuarioID = produto.UsuarioID,
                 UsuarioNome = produto.Usuario?.Nome,
                 UsuarioEmail = produto.Usuario?.Email
