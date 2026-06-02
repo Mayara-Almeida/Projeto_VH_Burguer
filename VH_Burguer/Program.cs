@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using VH_Burguer.Applications.Autenticacao;
+using VH_Burguer.Applications.ContentSafety;
 using VH_Burguer.Applications.Services;
 using VH_Burguer.Contexts;
 using VH_Burguer.Interfaces;
@@ -69,6 +70,9 @@ builder.Services.AddScoped<LogAlteracaoProdutoService>();
 //JWT
 builder.Services.AddScoped<GeradorTokenJwt>();
 builder.Services.AddScoped<AutenticacaoService>();
+
+// Moderar conteúdo
+builder.Services.AddScoped<IContentSafetyRepository, ContentSafetyService>();
 
 // Configura o sistema de autenticação da aplicação.
 // Aqui estamos dizendo que o tipo de autenticação padrão será JWT Bearer.

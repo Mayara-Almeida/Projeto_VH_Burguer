@@ -1,4 +1,6 @@
-﻿using VH_Burguer.Applications.Conversoes;
+﻿using System.Threading.Tasks;
+using VH_Burguer.Applications.ContentSafety;
+using VH_Burguer.Applications.Conversoes;
 using VH_Burguer.Applications.Regras;
 using VH_Burguer.Domains;
 using VH_Burguer.DTOs.Produtodto;
@@ -10,10 +12,26 @@ namespace VH_Burguer.Applications.Services
     public class ProdutoService
     {
         private readonly IProdutoRepository _repository;
+        private readonly IContentSafetyRepository _contentSafety;
 
-        public ProdutoService(IProdutoRepository repository)
+        public ProdutoService(IProdutoRepository repository, IContentSafetyRepository contentSafety)
         {
             _repository = repository;
+            _contentSafety = contentSafety;
+        }
+
+        private async Task ValidarConteudoProdutoAsync(string nome, string descricao)
+        {
+            string textoParaValidar = $@"
+                Nome do produto: {nome}
+                Descrição do produto: {descricao}";
+
+            var resultado = await _contentSafety.ValidarConteudo(textoParaValidar);
+
+            if (!resultado.aprovado)
+            {
+                throw new DomainException(resultado.msg);
+            }
         }
 
         // Para cada produto que veio do banco
@@ -85,10 +103,12 @@ namespace VH_Burguer.Applications.Services
         }
 
         // Retorar o método adicomar como leitura
-        public LerProdutoDto Adicionar(CriarProdutoDto produtoDto, int usuarioId)
+        public async Task<LerProdutoDto> Adicionar(CriarProdutoDto produtoDto, int usuarioId)
         {
             ValidarAutenticacao.ValidarAutenticacaoLogin(usuarioId); 
             ValidarCadastro(produtoDto); // Antes de adicionar o validar cadastro tem que ser chamado
+
+            await ValidarConteudoProdutoAsync(produtoDto.Nome, produtoDto.Descricao);
 
             if(_repository.NomeExiste(produtoDto.Nome))
             {
