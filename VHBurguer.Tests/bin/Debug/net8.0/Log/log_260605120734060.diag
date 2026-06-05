@@ -1,0 +1,30 @@
+2026-06-05T12:07:34.0657542+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 1.9.1+cb5afc3bb9bb01ebd75b57f89e8358b914ee2a49
+2026-06-05T12:07:34.0742490+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-06-05T12:07:34.0753736+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-06-05T12:07:34.0753800+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 12:07:34.044
+2026-06-05T12:07:34.0754972+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 38444
+2026-06-05T12:07:34.0755913+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.27
+2026-06-05T12:07:34.0755960+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.27\System.Private.CoreLib.dll
+2026-06-05T12:07:34.0756056+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-06-05T12:07:34.0756469+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VHBurguer.Tests\bin\Debug\net8.0\VHBurguer.Tests.dll
+2026-06-05T12:07:34.0757400+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VHBurguer.Tests\bin\Debug\net8.0\Log --results-directory C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VH_Burguer\TestResults --client-port 54668'
+2026-06-05T12:07:34.0766707+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-06-05T12:07:34.0911477+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-06-05T12:07:34.1002291+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-06-05T12:07:34.2832398+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '3.2.2' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-06-05T12:07:34.2885590+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v3.2.2+728c1dce01 (64-bit .NET 8.0.27)
+2026-06-05T12:07:34.3124842+00:00 xUnit.net INFORMATION   Discovering: VHBurguer.Tests
+2026-06-05T12:07:34.3347826+00:00 xUnit.net INFORMATION   Discovered:  VHBurguer.Tests
+2026-06-05T12:07:34.3532939+00:00 xUnit.net INFORMATION   Starting:    VHBurguer.Tests
+2026-06-05T12:07:34.5334235+00:00 xUnit.net ERROR     VHBurguer.Tests.Services.CategoriaServiceTests.Adicionar_DeveGerarErro_QuandoEstiverVazio [FAIL]
+2026-06-05T12:07:34.5336409+00:00 xUnit.net INFORMATION       Expected a <VH_Burguer.Exceptions.DomainException> to be thrown, but no exception was thrown.
+2026-06-05T12:07:34.5338202+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-06-05T12:07:34.5340069+00:00 xUnit.net INFORMATION            at FluentAssertions.Specialized.DelegateAssertionsBase`2.<>c__DisplayClass8_0`1.<ThrowInternal>b__0(AssertionChain chain)
+2026-06-05T12:07:34.5340194+00:00 xUnit.net INFORMATION            at FluentAssertions.Specialized.DelegateAssertionsBase`2.ThrowInternal[TException](Exception exception, String because, Object[] becauseArgs)
+2026-06-05T12:07:34.5340231+00:00 xUnit.net INFORMATION            at FluentAssertions.Specialized.DelegateAssertions`2.Throw[TException](String because, Object[] becauseArgs)
+2026-06-05T12:07:34.5340365+00:00 xUnit.net INFORMATION         C:\Users\47014999869\Desktop\Projeto_VH_Burguer\VHBurguer.Tests\Services\CategoriaServiceTests.cs(37,0): at VHBurguer.Tests.Services.CategoriaServiceTests.Adicionar_DeveGerarErro_QuandoEstiverVazio()
+2026-06-05T12:07:34.5340405+00:00 xUnit.net INFORMATION            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+2026-06-05T12:07:34.5340429+00:00 xUnit.net INFORMATION            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+2026-06-05T12:07:34.5357702+00:00 xUnit.net INFORMATION   Finished:    VHBurguer.Tests (ID = '9bab4eb7486645e3bc9bd97e85f1d3d142ac286c3935963b2136641f4f6cbd8d')
+2026-06-05T12:07:34.5385873+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-06-05T12:07:34.5433566+00:00 xUnit.net INFORMATION    VHBurguer.Tests  Total: 2, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0,191s

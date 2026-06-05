@@ -108,7 +108,7 @@ namespace VH_Burguer.Applications.Services
             ValidarAutenticacao.ValidarAutenticacaoLogin(usuarioId); 
             ValidarCadastro(produtoDto); // Antes de adicionar o validar cadastro tem que ser chamado
 
-            await ValidarConteudoProdutoAsync(produtoDto.Nome, produtoDto.Descricao);
+            //await ValidarConteudoProdutoAsync(produtoDto.Nome, produtoDto.Descricao);
 
             if(_repository.NomeExiste(produtoDto.Nome))
             {

@@ -50,7 +50,7 @@ namespace VH_Burguer.Applications.Services
         {
             if(string.IsNullOrWhiteSpace(nome))
             {
-                throw new DomainException("Nome é obrigatório");
+                throw new DomainException("Nome é obrigatório.");
             }
         }
 
